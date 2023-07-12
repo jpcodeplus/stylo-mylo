@@ -1,0 +1,314 @@
+/*
+JP BEHRENS @ CODE PLUS (https://code-plus-media.de)
+Last Update 2023-06-13
+*/
+
+@mixin cp_flex($direction: row, $justify-content: null, $align-items: null) {
+    display: flex;
+    flex-direction: $direction;
+    @if $justify-content != null {
+      justify-content: $justify-content;
+    }
+    @if $align-items != null {
+      align-items: $align-items;
+    }
+  }
+  
+  // Später als Schleife ausgeben 
+  
+  .flex_row {
+    @include cp_flex();
+  }
+  
+  .flex_row-start {
+    @include cp_flex(row, flex-start);
+  }
+  
+  .flex_row-center {
+    @include cp_flex(row, center);
+  }
+  
+  .flex_row-end {
+    @include cp_flex(row, flex-end);
+  }
+  
+  .flex_row-between {
+    @include cp_flex(row, space-between);
+  }
+  
+  .flex_row-around {
+    @include cp_flex(row, space-around);
+  }
+  
+  .flex_row-evently {
+    @include cp_flex(row, space-evenly);
+  }
+  
+  .flex_row-start-start {
+    @include cp_flex(row, flex-start, flex-start);
+  }
+  
+  .flex_row-start-center {
+    @include cp_flex(row, flex-start, center);
+  }
+  
+  .flex_row-start-end {
+    @include cp_flex(row, flex-start, flex-end);
+  }
+  
+  .flex_row-start-base {
+    @include cp_flex(row, flex-start, baseline);
+  }
+  
+  .flex_row-start-stretch {
+    @include cp_flex(row, flex-start, stretch);
+  }
+  
+  .flex_row-center-start {
+    @include cp_flex(row, center, flex-start);
+  }
+  
+  .flex_row-center-center {
+    @include cp_flex(row, center, center);
+  }
+  
+  .flex_row-center-end {
+    @include cp_flex(row, center, flex-end);
+  }
+  
+  .flex_row-center-base {
+    @include cp_flex(row, center, baseline);
+  }
+  
+  .flex_row-center-stretch {
+    @include cp_flex(row, center, stretch);
+  }
+  
+  .flex_row-end-start {
+    @include cp_flex(row, flex-end, flex-start);
+  }
+  
+  .flex_row-end-center {
+    @include cp_flex(row, flex-end, center);
+  }
+  
+  .flex_row-end-end {
+    @include cp_flex(row, flex-end, flex-end);
+  }
+  
+  .flex_row-end-base {
+    @include cp_flex(row, flex-end, baseline);
+  }
+  
+  .flex_row-end-stretch {
+    @include cp_flex(row, flex-end, stretch);
+  }
+  
+  .flex_row-between-start {
+    @include cp_flex(row, space-between, flex-start);
+  }
+  
+  .flex_row-between-center {
+    @include cp_flex(row, space-between, center);
+  }
+  
+  .flex_row-between-end {
+    @include cp_flex(row, space-between, flex-end);
+  }
+  
+  .flex_row-between-base {
+    @include cp_flex(row, space-between, baseline);
+  }
+  
+  .flex_row-between-stretch {
+    @include cp_flex(row, space-between, stretch);
+  }
+  
+  .flex_row-around-start {
+    @include cp_flex(row, space-around, flex-start);
+  }
+  
+  .flex_row-around-center {
+    @include cp_flex(row, space-around, center);
+  }
+  
+  .flex_row-around-end {
+    @include cp_flex(row, space-around, flex-end);
+  }
+  
+  .flex_row-around-base {
+    @include cp_flex(row, space-around, baseline);
+  }
+  
+  .flex_row-around-stretch {
+    @include cp_flex(row, space-around, stretch);
+  }
+  
+  .flex_row-evenly-start {
+    @include cp_flex(row, space-evenly, flex-start);
+  }
+  
+  .flex_row-evenly-center {
+    @include cp_flex(row, space-evenly, center);
+  }
+  
+  .flex_row-evenly-end {
+    @include cp_flex(row, space-evenly, flex-end);
+  }
+  
+  .flex_row-evenly-base {
+    @include cp_flex(row, space-evenly, baseline);
+  }
+  
+  .flex_row-evenly-stretch {
+    @include cp_flex(row, space-evenly, stretch);
+  }
+  
+  .flex_col {
+    @include cp_flex(column);
+  }
+  
+  .flex_col-start {
+    @include cp_flex(column, flex-start);
+  }
+  
+  .flex_col-center {
+    @include cp_flex(column, center);
+  }
+  
+  .flex_col-end {
+    @include cp_flex(column, flex-end);
+  }
+  
+  .flex_col-between {
+    @include cp_flex(column, space-between);
+  }
+  
+  .flex_col-around {
+    @include cp_flex(column, space-around);
+  }
+  
+  .flex_col-evently {
+    @include cp_flex(column, space-evenly);
+  }
+  
+  .flex_col-start-start {
+    @include cp_flex(column, flex-start, flex-start);
+  }
+  
+  .flex_col-start-center {
+    @include cp_flex(column, flex-start, center);
+  }
+  
+  .flex_col-start-end {
+    @include cp_flex(column, flex-start, flex-end);
+  }
+  
+  .flex_col-start-base {
+    @include cp_flex(column, flex-start, baseline);
+  }
+  
+  .flex_col-start-stretch {
+    @include cp_flex(column, flex-start, stretch);
+  }
+  
+  .flex_col-center-start {
+    @include cp_flex(column, center, flex-start);
+  }
+  
+  .flex_col-center-center {
+    @include cp_flex(column, center, center);
+  }
+  
+  .flex_col-center-end {
+    @include cp_flex(column, center, flex-end);
+  }
+  
+  .flex_col-center-base {
+    @include cp_flex(column, center, baseline);
+  }
+  
+  .flex_col-center-stretch {
+    @include cp_flex(column, center, stretch);
+  }
+  
+  .flex_col-end-start {
+    @include cp_flex(column, flex-end, flex-start);
+  }
+  
+  .flex_col-end-center {
+    @include cp_flex(column, flex-end, center);
+  }
+  
+  .flex_col-end-end {
+    @include cp_flex(column, flex-end, flex-end);
+  }
+  
+  .flex_col-end-base {
+    @include cp_flex(column, flex-end, baseline);
+  }
+  
+  .flex_col-end-stretch {
+    @include cp_flex(column, flex-end, stretch);
+  }
+  
+  .flex_col-between-start {
+    @include cp_flex(column, space-between, flex-start);
+  }
+  
+  .flex_col-between-center {
+    @include cp_flex(column, space-between, center);
+  }
+  
+  .flex_col-between-end {
+    @include cp_flex(column, space-between, flex-end);
+  }
+  
+  .flex_col-between-base {
+    @include cp_flex(column, space-between, baseline);
+  }
+  
+  .flex_col-between-stretch {
+    @include cp_flex(column, space-between, stretch);
+  }
+  
+  .flex_col-around-start {
+    @include cp_flex(column, space-around, flex-start);
+  }
+  
+  .flex_col-around-center {
+    @include cp_flex(column, space-around, center);
+  }
+  
+  .flex_col-around-end {
+    @include cp_flex(column, space-around, flex-end);
+  }
+  
+  .flex_col-around-base {
+    @include cp_flex(column, space-around, baseline);
+  }
+  
+  .flex_col-around-stretch {
+    @include cp_flex(column, space-around, stretch);
+  }
+  
+  .flex_col-evenly-start {
+    @include cp_flex(column, space-evenly, flex-start);
+  }
+  
+  .flex_col-evenly-center {
+    @include cp_flex(column, space-evenly, center);
+  }
+  
+  .flex_col-evenly-end {
+    @include cp_flex(column, space-evenly, flex-end);
+  }
+  
+  .flex_col-evenly-base {
+    @include cp_flex(column, space-evenly, baseline);
+  }
+  
+  .flex_col-evenly-stretch {
+    @include cp_flex(column, space-evenly, stretch);
+  }
+  
