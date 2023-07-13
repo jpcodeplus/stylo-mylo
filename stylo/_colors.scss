@@ -1,17 +1,62 @@
-// Background Colors
-$cp_bg-primary:#F5F5F7;
-$cp_bg-secondary:#6c757d;
-$cp_bg-secondary:#6c757d;
-$cp_bg-accent:#6c757d;
+/*
+JP BEHRENS @ CODE PLUS (https://code-plus-media.de)
+Last Update 2023-06-13
+v 0.0.2
+*/
 
-// Text Colors
-$cp_text-primary:#1D1D1F;
-$cp_text-secondary:#6c757d;
-$cp_text-secondary:#6c757d;
-$cp_text-accent:#6c757d;
-
-// Special Colors
-$cp_color-success: #28a745;
-$cp_color-info: #17a2b8;
-$cp_color-warning: #ffc107;
-$cp_color-danger: #dc3545;
+// Mixin zur Generierung von Farbnuancen
+@mixin getColorShades($color-name, $base-color, $type) {
+    $shades: (
+      200: 10%,    // Aufhellung um 10%
+      300: 20%,    // Aufhellung um 20%
+      400: 30%,    // Aufhellung um 30%
+      0: 0%,       // Ausgangsfarbe (keine Veränderung)
+      600: -10%,   // Abdunkelung um 10%
+      700: -20%,   // Abdunkelung um 20%
+      800: -30%    // Abdunkelung um 30%
+    );
+  
+    @each $shade, $value in $shades {
+      // Klassennamen festlegen (bei 0 wird der Farbname selbst verwendet)
+      $name: if($shade == 0, $color-name, "#{$color-name}-#{$shade}");
+      .#{$name} {
+        @if $type == "bgColor" {
+          background-color: if($value >= 0, lighten($base-color, $value), darken($base-color, -$value));
+        } @else if $type == "textColor" {
+          color: if($value >= 0, lighten($base-color, $value), darken($base-color, -$value));
+        }
+      }
+    }
+  }
+  
+  $bgColors: (
+    "bg-primary": #007AFF,      // Blau
+    "bg-secondary": #FFCC00,    // Gelb
+    "bg-accent": #FF3B30,       // Rot
+    // Special Colors
+    "bg-success": #4CD964,      // Erfolgsgrün
+    "bg-info": #34AADC,         // Informationsblau
+    "bg-warning": #FF9500,      // Warnungsorange
+    "bg-danger": #FF2D55        // Gefahrenrot
+  );
+  
+  $textColors: (
+    "color-primary": #007AFF,     // Blau
+    "color-secondary": #FFCC00,   // Gelb
+    "color-accent": #FF3B30,      // Rot
+    // Special Colors
+    "color-success": #4CD964,     // Erfolgsgrün
+    "color-info": #34AADC,        // Informationsblau
+    "color-warning": #FF9500,     // Warnungsorange
+    "color-danger": #FF2D55       // Gefahrenrot
+  );
+  
+  
+  @each $bgColor_name, $bgColor in $bgColors {
+    @include getColorShades($bgColor_name, $bgColor, "bgColor");
+  }
+  
+  @each $textColor_name, $textColor in $textColors {
+    @include getColorShades($textColor_name, $textColor, "textColor");
+  }
+  
