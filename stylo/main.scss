@@ -1,7 +1,15 @@
-@import 'base';
-@import 'colors';
+/* MAIN
+---------------------------
+JP BEHRENS @ CODE PLUS (https://code-plus-media.de)
+Last Update 2023-06-13
+v 0.0.2
+*/
+
+@each $import in ('base', 'colors', 'display/flex') {
+  @import '#{$import}';
+}
 
 body {
-    background-color: $cp_bg-primary;
-    color: $cp_text-primary;
-  }
+  background-color: map-get($baseColor, 'background');
+  color: map-get($baseColor, 'text');
+}

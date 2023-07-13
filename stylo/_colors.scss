@@ -29,6 +29,12 @@ v 0.0.2
     }
   }
   
+
+  $baseColor:(
+    'background':#F5F5F7,
+    'text' : #1D1D1F
+  );
+
   $bgColors: (
     "bg-primary": #007AFF,      // Blau
     "bg-secondary": #FFCC00,    // Gelb
