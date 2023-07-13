@@ -5,7 +5,7 @@ Last Update 2023-06-13
 v 0.0.2
 */
 
-@each $import in ('base', 'colors', 'display/flex') {
+@each $import in ('base', 'colors', 'display/flex','typo/text') {
   @import '#{$import}';
 }
 

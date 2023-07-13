@@ -1,0 +1,34 @@
+/* TEXT
+---------------------------
+JP BEHRENS @ CODE PLUS (https://code-plus-media.de)
+Last Update 2023-06-13
+v 0.0.1
+*/
+
+
+/* 01 -TEXT LINES | Last Update 2023-06-13
+---------------------------
+Der Code definiert Klassen für Textzeilen mit variabler Anzahl von Zeilen.
+Die Anzahl der Zeilen wird durch den Präfix "txt-lines" und die Schleifenvariable festgelegt.
+Beispielklassen sind .txt-lines-1, .txt-lines-2, .txt-lines-3, usw.
+Der Text innerhalb der Klassen wird auf die angegebene Anzahl von Zeilen begrenzt.
+Dadurch wird der Text stilvoll dargestellt und überschüssige Zeilen werden ausgeblendet.
+*/
+
+// Definiere den Präfix für die Klassennamen der Textzeilen
+$txt-lines-prefix: txt-lines;
+
+// Schleife zur Generierung von Klassen für verschiedene Anzahlen von Textzeilen
+@for $i from 1 through 9 {
+  .#{$txt-lines-prefix}-#{$i} {
+    // Verstecke den Textüberlauf in den Klassen
+    overflow: hidden;
+    // Stelle den Text in einer vertikalen Box dar
+    display: -webkit-box;
+    // Setze die Orientierung der Box auf vertikal
+    -webkit-box-orient: vertical;
+    // Begrenze die Anzahl der Textzeilen mit der Schleifenvariable
+    -webkit-line-clamp: $i;
+    line-clamp: $i;
+  }
+}
