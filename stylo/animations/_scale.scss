@@ -1,0 +1,42 @@
+// SCALE ANIMATIONS
+
+$animation-data: (
+  center,
+  top center,
+  bottom center,
+  left center,
+  right center,
+  bottom left,
+  bottom right,
+  top left,
+  top right,
+  vertical center,
+  horizontal center,
+  vertical top center,
+  vertical bottom center,
+  horizontal left center,
+  horizontal right center,
+);
+
+@each $animation in $animation-data {
+  $animation-name: nth($animation, 1);
+  $transform-direction: nth($animation, 2);
+
+  .scale-up-#{$animation-name} {
+    animation: #{$animation-name} 4s;
+    @keyframes #{$animation-name} {
+      @if $transform-direction == 'center' {
+        0% { transform: scale(0.5); transform-origin: center; }
+        100% { transform: scale(1); transform-origin: center; }
+      } @else if ($transform-direction == 'vertical top') or ($transform-direction == 'vertical bottom') {
+        $y-direction: if($transform-direction == 'vertical top', top, bottom);
+        0% { transform: scale(0.5); transform-origin: center #{$y-direction}; }
+        100% { transform: scale(1); transform-origin: center #{$y-direction}; }
+      } @else if ($transform-direction == 'horizontal left') or ($transform-direction == 'horizontal right') {
+        $x-direction: if($transform-direction == 'horizontal left', left, right);
+        0% { transform: scale(0.5); transform-origin: #{$x-direction} center; }
+        100% { transform: scale(1); transform-origin: #{$x-direction} center; }
+      }
+    }
+  }
+}

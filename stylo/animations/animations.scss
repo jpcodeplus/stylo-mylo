@@ -1,0 +1,9 @@
+/*
+JP BEHRENS @ CODE PLUS (https://code-plus-media.de)
+Last Update 2023-06-20
+v 0.0.2
+*/
+
+@each $import in ('_scale') {
+    @import '#{$import}';
+}
